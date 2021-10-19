@@ -2,6 +2,7 @@ package com.company;
 
 public class Main {
 
+
     public static Dog dog = new Dog("Simba", new String[]{"Sit", "Attack"});
     public static Cat cat = new Cat("Vasjka", 9);
     public static Snake snake = new Snake("Kobra", "Kobra's bite is hurts");
@@ -10,14 +11,15 @@ public class Main {
 
 
     public static void main(String[] args) {
-        for (Animal animal : animals) {
-            animal.print();
-        }
-    }
+        Printable[] print = {createObject("Cat"), createObject("Dog"), createObject("Snake")};
 
-    public static Animal createObject() {
-        return createObject(animals.toString());
-    }
+            for (Printable printable:print) {
+                printable.print();
+            }
+        }
+
+
+
 
     public static Animal createObject(String className) {
         switch (className) {
